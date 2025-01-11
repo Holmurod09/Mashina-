@@ -1,0 +1,23 @@
+.header__title {
+    width: 100%;
+    line-height: 1;
+    text-align: left;
+    color: var(--white-color);
+  }
+
+/* .header__subtitles{
+    margin-top: ;
+} */
+  .header__subtitle {
+    max-width: 52.5rem;
+    width: 100%;
+    line-height: 1.5;
+    margin-top: 2.4rem;
+    color: var(--white-color);
+  }
+  .header__btn {
+    margin-top: 3.9rem;
+  }
+  .title-span{
+    color: rgb(212, 204, 123);
+  }

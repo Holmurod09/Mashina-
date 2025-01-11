@@ -1,0 +1,194 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ijara</title>
+  <link rel="stylesheet" href="{% static './Css/base.css' %}">
+  <link rel="stylesheet" href="{% static './Css/layout.css' %}">
+  <link rel="stylesheet" href="{% static './Css/typography.css' %}">
+  <link rel="stylesheet" href="{% static './Css/utilities.css' %}">
+  <link rel="stylesheet" href="{% static './Css/components.css' %}">
+  <link rel="stylesheet" href="{% static './Css/main.css' %}">
+  <link rel="stylesheet" href="{% static './Css/responsive.css' %}">
+</head>
+
+<body>
+  <div class="main__container">
+    <header class="header">
+      <div class="container">
+        <div class="header__wrapper">
+          <nav class="navbar">
+            <div class="navbar__logo">
+              <img src="{% static './Img/logo_gotovo2-oyse0kctwblixledlug8tdgifzhz3p1qg34bxwf0wc 1.png' %}" alt="">
+            </div>
+            <ul class="navbar__list">
+              <li class="navbar__item">
+                <a href="" class="navbar__link">
+                  <span class="heading-fiveth">Auto park</span>
+                </a>
+              </li>
+              <li class="navbar__item">
+                <a href="" class="navbar__link">
+                  <span class="heading-fiveth">Ijara shartlari</span>
+                </a>
+              </li>
+              <li class="navbar__item">
+                <a href="" class="navbar__link">
+                  <span class="heading-fiveth">Buyurtmalar</span>
+                </a>
+              </li>
+              <li class="navbar__item navbar__item--last">
+                <a href="" class="navbar__link">
+                  <span class="heading-fiveth">Kontakt</span>
+                </a>
+              </li>
+            </ul>
+            <div class="navbar-number heading-fiveth">+998 91-860-51-99</div>
+          </nav>
+          <section class="header__main">
+            <div class="header__main--left">
+              <h1 class="header__title heading-primary">
+                Arenda <span class="title-span">eksklyuziv</span> auto Xorazm
+              </h1>
+              <div class="header__subtitles">
+                <h4 class="header__subtitle heading-tertiary">
+                  Xorazmda istalgan joyga yetkazib berish
+                </h4>
+                <h4 class="header__subtitle heading-tertiary">
+                  Bepul qo'shimcha aksessuarlar 
+                </h4>
+                <h4 class="header__subtitle heading-tertiary">
+                  Har qanday to'lov usuli
+                </h4>
+              </div>
+              <div class="header__btn">
+                <button class="btn">Automobilni tanlang</button>
+              </div>
+            </div>
+            <div class="header__main--right">
+              <div class="picture">
+                <img src="{% static './Img/malibu_primer.png' %}" alt="header-img" />
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </header>
+    <main class="main">
+      <div class="container">
+        <h1 class="header__title2">
+          Bizning<span class="title-span"> mashinalar</span>
+        </h1>
+        
+        <div class="cards__container">
+          {% for home in homes %}
+          <div class="card card1">
+            <img class="bmw__logo" src="{{ home.logo.url }}" alt="">
+            <h1 class="inline bmw325">{{ home.title }} <span class="title-span"> {{ home.position }}</span> {{ home.year }}</h1>
+            <img class="bmwcar1" src="{{ home.background.url }}" alt="bmwcar">
+            <div class="four__pic">
+              <h1 style="color: grey;">{{ home.mator }} </h1>
+              <h1 style="color: grey;">Benzin | {{ home.benzin }}</h1>
+              <h1 style="color: grey;">Uzatmalar qutisi = {{ home.uzatma }}</h1>
+            <h1 class="white"> {{ home.price }}</h1>
+            <div class="arend">
+              <h1 class="white1">Арендовать авто</h1>
+            </div>
+            </div> 
+          </div>
+          {% endfor %}
+      </div>
+      <div class="usloviya">
+        <div>
+          <h1 class="header__title3">
+            <span class="title-span">Условия</span>аренды
+          </h1>
+        </div>
+        <div class="container__usitems">
+          <div class="usitems">
+            <img class="imgof1" src="{% static './Img/usloviya/pasport.png' %}" alt="pasport">
+            <p class="uslov__font">Паспорт</p>
+          </div>
+          <div class="usitems">
+            <img class="imgof2" src="{% static './Img/usloviya/dok2.png' %}" alt="document">
+            <p class="uslov__font width11">Водительское удостоверение</p>
+          </div>
+          <div class="usitems">
+            <img class="imgof3" src="{% static './Img/usloviya/age.png' %}" alt="age">
+            <p class="uslov__font width22">Возраст от 22 лет</p>
+          </div>
+          <div class="usitems">
+            <img class="imgof4" src="{% static './Img/usloviya/staj.png' %}" alt="staj">
+            <p class="uslov__font width33">Водительский стаж от 3 лет</p>
+          </div>
+        </div>
+        <div class="button__dogovor">
+          <p class="dogovor__font">Договор аренды</p>
+
+        </div>
+        <div class="bmwimg__bottom">
+          <img class="background__bmw" src="{% static './Img/background__bmw.png' %}" alt="">
+        </div>
+      </div>
+      <div class="arenda__avto__container">
+        <div class="arenda__avto__border">
+          <p class="sapsari">Аренда автомобиля</p>
+          <div class="car__rus">
+            <label class="label1 " for="Mashina">Машина</label>
+            <select class="select1" name="" id="">
+              <option value="" class="select2__item">Машина</option>
+              <option value="">BMW 320 кабриолет</option>
+              <option value="">BMW Z4 кабриолет</option>
+              <option value="">BMW 420D кабриолет</option>
+              <option value="">Mercedes С180</option>
+            </select>
+            <div class="select2">
+              <select class="select2__item" name="" id="">
+                <option class="select2__item" value="">Дата получения</option>
+              </select>
+              <select class="select2__item" name="" id="">
+                <option value="">Дата возврата</option>
+              </select>
+            </div>
+            <div class="select2">
+              <select class="select2__item" name="" id="">
+                <option class="select2__item" value="">Время получения</option>
+              </select>
+              <select class="select2__item" name="" id="">
+                <option value="">Время возврата</option>
+              </select>
+            </div>
+            <div class="select2">
+              <select class="select2__item" name="" id="">
+                <option class="select2__item" value="">Место получения</option>
+              </select>
+              <select class="select2__item" name="" id="">
+                <option value="">Место возврата</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="otzivi__container">
+        <p class="sapsari otzivi__p">Отзывы</p>
+        <div class="unnamed__images">
+          {% for buyur in buyurs %}
+          <img class="unnamed__image" src="{{ buyur.backgraund.url }}" alt="">
+          {% endfor %}
+        </div>
+        <div class="uch__nuqta__container">
+          <img class="uch__nuqta" src="{% static './Img/unnamed/3__..png' %}" alt="">
+        </div>
+      </div>
+      
+    </main>
+    <footer class="footer">
+
+    </footer>
+  </div>
+</body>
+
+</html>
